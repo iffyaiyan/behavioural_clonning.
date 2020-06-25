@@ -1,12 +1,12 @@
-# **behavioral_cloning** 
+## behavioral_cloning
 
 ---
 
-**Introduction**
+## Introduction
 
 The objective of the project is to train a model to drive a car autonomously on a simulated track. The ability of the model to drive the car is learned from cloning the behaviour of a human driver. Training data is gotten from examples of a human driving in the simulator, then fed into a deep learning network which learns the response (steering angle) for every encountered frame in the simulation. In other words, the model is trained to predict an appropriate steering angle for every frame while driving. The model is then validated on a new track to check for generalization of the learned features for performing steering angle prediction.
 
-**Project Goal**
+## Project Goal
 
 The goals / steps of this project are the following:
 * Use the simulator to collect data of good driving behavior
