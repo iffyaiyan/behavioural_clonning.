@@ -75,19 +75,19 @@ I chose data provide by Udacity to train the model, used various data Augmentati
 The overall strategy for deriving a model architecture was based on NVIDIA's architecture (https://devblogs.nvidia.com/deep-learning-self-driving-cars/).
 ![alt text][image1]
 
-My first step was to use a convolution neural network model similar to the Traffic signs classifier. It was a LeNet architecture. I thought this model might be appropriate because it extracts relevant features from the images that can help to come up with an acceptable regression model. I used 10 epochs.
+My first step was to use a convolution neural network model similar to the Traffic signs classifier. So I used a LeNet architecture. I used 10 epochs in this.
 
 In order to gauge how well the model was working, I split my image and steering angle data into a training and validation set. I found that my first model had a low mean squared error on the training set but a high mean squared error on the validation set. This implied that the model was overfitting. 
 
-To combat the overfitting, I modified the model so that I reduced epochs to 3. I got a non-everfitted model after this because the validation mse and the testing mse where similar.
+In order to combat the overfitting, I reduced epochs to 3. By doing so I got a non-overfitted model because the validation mse and the testing mse where similar.
 
-The next step was to run the simulator to see how well the car was driving around track one. There were a few spots where the vehicle fell off the track. To improve the driving behavior in these cases, I changed the architeture for the NVIDIA one. By making this choice, I enhanced the performance of the vehicle of the tracked. However, the car still had problems by turning on pronounced curves. I decided to augment my training and validation sets by considereng the images from the right side and left side cameras with a factor correction of 0.2. 
+The next step taken by me was to run the simulator to see how well the car was driving around track one. There were a few spots where the vehicle fell off the track. To improve the driving behavior in these cases, I changed the architeture for the NVIDIA one. By doing so, I enhanced the performance of the vehicle of the tracked. However, the car still had problems by turning on pronounced curves. I decided to augment my training and validation sets by considereng the images from the right side and left side cameras with a factor correction of 0.2. 
 
 At the end of the process, the vehicle was able to drive autonomously around the track without leaving the road.
 
 #### 2. Final Model Architecture
 
-The final model architecture (model.py lines 52-66) consisted of a convolution neural network with the following layers and layer sizes:
+The final model architecture consisted of a convolution neural network with the following layers and layer sizes:
 
 Here is a visualization of the architecture (note: visualizing the architecture is optional according to the project rubric)
 
@@ -99,12 +99,12 @@ To capture good driving behavior, I first recorded two laps on track one using c
 
 ![alt text][image2]
 
-I then recorded the vehicle recovering from the left side and right sides of the road back to center so that the vehicle would learn to come bach to the center of the lane.
+I then recorded the vehicle recovering from the left side and right sides of the road back to center so that the vehicle would learn to come back to the center of the lane.
 
 
 
 
-To augment the data sat, I used the images from the left-side camera and right-side camera with a correction of 0.2 degrees.
+For augmenting the dataset, I used the images from the left-side camera and right-side camera with a correction of 0.2 degrees.
 
 #### Left-side camera
 ![alt text][image4]
@@ -112,8 +112,11 @@ To augment the data sat, I used the images from the left-side camera and right-s
 ![alt text][image3]
 
 
-After the collection process, I had 4512 number of data points. I then preprocessed this data by cropping the upper part of the image where the threes and sky of the road are in order to delete useless information. 
+After the collection process, I had 4512 number of data points. I then preprocessed this data by cropping the upper part of the image where the trees and sky of the road are in order to delete useless information. 
 
 I finally randomly shuffled the data set and put 20% of the data into a validation set. 
 
-I used this training data for training the model. The validation set helped determine if the model was over or under fitting. The ideal number of epochs was 3 as evidenced by the matching of the validation set and training set accuracy. I used an adam optimizer so that manually training the learning rate wasn't necessary.
+I used this training data for training the model. The validation set helped me to determine if the model was over or under fitting. The ideal number of epochs was 3 as evidenced by the matching of the validation set and training set accuracy. I used an adam optimizer to escape the manual training of learning rate.
+
+## How to write a README
+A well written README file can enhance your project and portfolio.  Develop your abilities to create professional README files by completing [this free course](https://www.udacity.com/course/writing-readmes--ud777).
